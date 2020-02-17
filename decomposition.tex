@@ -1,0 +1,126 @@
+% Compiling with
+% latexmk -halt-on-error -shell-escape -synctex=1 -pdf
+% (Recommend using a latexmkrc file so as just to run latexmk -pvc, for example)
+% Probably you can achieve the same with an inordinate number of invocations of
+% pdflatex -halt-on-error -shell-escape -synctex=1
+
+% fleqn aligns equations to the left, a4 paper size, 11pt font, article class
+\documentclass[fleqn,a4paper,11pt]{article}
+\title{On Decompositions of Infinite Groups}
+\author{A. Horn, D. Simms, et al.}
+
+\usepackage{mymaths}
+\usepackage{mystyle}
+
+\begin{document}
+\maketitle
+
+\section{\((\Integers, +)\)}
+\(\Integers\) is not decomposable. Suppose we had
+\(\Integers \isom G \times H\) for nontrivial \(G\), \(H\). Then since the
+subgroups of \(\Integers\) are of the form \(k\Integers\), we have
+\(G \isom n\Integers\) and \(H \isom m\Integers\) for some \(n, m\).
+
+Since \(k\Integers \isom \Integers\), this implies
+\(\Integers \isom G \times H \isom \Integers \times \Integers\). This is not
+possible since \(\Integers\) has \(2\Integers\) as its only subgroup of index
+two, but \(\Integers \times \Integers\) has two subgroups of index two:
+\(2\Integers \times \Integers\) and \(\Integers \times 2\Integers\).
+
+Hence \(\Integers\) is not decomposable.
+
+\section{\((\Rationals, +)\)}
+
+Suppose we had \(\Rationals \isom G \times H\) for some nontrivial groups
+\(G, H\). Both \(G\) and \(H\) have a subgroup isomorphic to \(\Integers\),
+since each contains a nonzero element, and each element of \(\Rationals\) has
+infinite order.
+
+Hence \(\Rationals\) has a subgroup isomorphic to
+\(\Integers \times \Integers\). Suppose \(a/b, c/d \in \Rationals\) generate the
+corresponding subgroups isomorphic to
+\(\Integers \times 0\Integers\) and \(0\Integers \times \Integers\)
+respectively, so
+\(\Integers \times \Integers \isom \cycsgp{a/b} \times \cycsgp{c/d}\).
+
+Then
+\(bd[\cycsgp{a/b} \times \cycsgp{c/d}]
+  = \set{mad + nbc : m, n \in \Integers}\), as
+\(\Rationals\) is abelian. But by B\'ezout's Theorem, \(mad + nbc\) can take on
+precisely the values in \([\gcd(ad, bc)]\Integers\), so in fact
+\begin{equation*}
+ \cycsgp{a/b} \times \cycsgp{c/d}
+ \isom \bracks[\bigg]{\frac{\gcd(ad, bc)}{bd}}\Integers
+ \isom \Integers
+\end{equation*}
+giving \(\Integers \times \Integers \isom \Integers\), which is a contradiction,
+as previously established.
+
+So also \(\Rationals\) is not decomposable.
+
+\section{\((\Reals, +)\)}
+
+Let \(\mathcal H\) be a Hamel basis for \(\Reals\) as a vector space over
+\(\Rationals\). Then any partition of \(\mathcal H\) as a disjoint union
+\(\mathcal H = \mathcal H_1 \cup \mathcal H_2\) gives rise to two subgroups
+\(G_1 = \vspan \mathcal H_1, G_2 = \vspan \mathcal H_2 \sgp \Reals\). These are
+subgroups since they are subspaces by definition.
+
+Now we can apply the Direct Product Theorem, since
+\begin{enumerate}[label=(\roman*)]
+ \item
+  By linear independence, if \(x_1 \in G_1, x_2 \in G_2\) with \(x_1 = x_2\),
+  then \(x_1 = x_2 = 0\), so \(G_1 \cap G_2\) is precisely \(\set{0}\).
+ \item
+  \(\Reals\) is abelian, so trivially,
+  \(x_1 + x_2 = x_2 + x_2 \Forall x_1 \in G_1, x_2 \in G_2\).
+ \item
+  Each \(x \in \Reals\) can be written as a linear combination of elements of
+  \(\mathcal H\), by definition. Then simply splitting this linear combination
+  into linear combinations of the elements in \(\mathcal H_1\) and
+  \(\mathcal H_2\), we get \(x_1 \in G_1, x_2 \in G_2\) with \(x_1 + x_2 = x\).
+\end{enumerate}
+So \(\Reals \isom G_1 \times G_2\) for any such choice.
+
+To be explicit, a possible choice here might be
+\(\mathcal H_1 = \mathcal H \cap \Rationals\),
+\(\mathcal H_2 = \mathcal H \setminus \Rationals\), or possibly replacing
+\(\Rationals\) with some more imaginative subsets of \(\Reals\). Here, we know
+\(\abs{\mathcal H_1} = 1\) precisely, as there must be a rational in
+\(\mathcal H\), so neither of \(G_1, G_2\) is trivial.
+
+\section{\((\Complex, +)\)}
+
+\(\Complex\) is quite straightforwardly isomorphic to \(\Reals \times \Reals\)
+via \(z \mapsto (\Re z, \Im z)\).
+%ImRe??
+
+\section{\((\Rationals^\times, \cdot)\)}
+
+This is isomorphic to \(C_2 \times (\Rationals^+, \cdot)\) via
+\(x \mapsto (\sgn x, \abs x)\) (where \(\sgn x \defeq x/\abs x\)).
+
+\section{\((\Reals^\times, \cdot)\)}
+
+This is isomorphic to \(C_2 \times (\Reals^+, \cdot)\) via
+\(x \mapsto (\sgn x, \abs x)\).
+
+\section{\((\Complex^\times, \cdot)\)}
+
+This is isomorphic to \(S^1 \times (\Reals^+, \cdot)\) via
+\(re^{i\theta} \mapsto (e^{i\theta}, r)\).
+
+\section{\(\parens[\big]{\set{a / 2^n : a, n \in \Integers}, +}\)}
+
+\section{\((\Rationals^+, \cdot)\)}
+
+\section{\((\Reals^+, \cdot)\)}
+
+This is isomorphic to \((\Reals, +)\) via \(x \mapsto \log x\), so we can reuse
+the previous construction.
+
+\section{\(S^1 \isom \Reals / \Integers\)}
+
+\section{\(\Rationals / \Integers\)}
+
+\end{document}
