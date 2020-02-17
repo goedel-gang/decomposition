@@ -42,21 +42,14 @@ corresponding subgroups isomorphic to
 \(\Integers \times 0\Integers\) and \(0\Integers \times \Integers\)
 respectively, so
 \(\Integers \times \Integers \isom \cycsgp{a/b} \times \cycsgp{c/d}\).
+Without loss of generality, both generators are positive.
 
-Then
-\(bd[\cycsgp{a/b} \times \cycsgp{c/d}]
-  = \set{mad + nbc : m, n \in \Integers}\), as
-\(\Rationals\) is abelian. But by B\'ezout's Theorem, \(mad + nbc\) can take on
-precisely the values in \([\gcd(ad, bc)]\Integers\), so in fact
-\begin{equation*}
- \cycsgp{a/b} \times \cycsgp{c/d}
- \isom \bracks[\bigg]{\frac{\gcd(ad, bc)}{bd}}\Integers
- \isom \Integers
-\end{equation*}
-giving \(\Integers \times \Integers \isom \Integers\), which is a contradiction,
-as previously established.
+Then, however, \(bc(a/b) = ad(c/d)\). This implies that in the subgroup
+isomorphic to \(\Integers \times \Integers\), we have
+\((bc, 0) = (0, ad)\), which is a contradiction as neither of these terms can be
+\(0\) if \(a/b, c/d\) are to be generators.
 
-So also \(\Rationals\) is not decomposable.
+So also \(\mathbb Q\) is not decomposable.
 
 \section{\((\Reals, +)\)}
 
