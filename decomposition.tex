@@ -82,6 +82,10 @@ To be explicit, a possible choice here might be
 \(\abs{\mathcal H_1} = 1\) precisely, as there must be a rational in
 \(\mathcal H\), so neither of \(G_1, G_2\) is trivial.
 
+Note that really this implies that anything that is the additive group of a
+vector space over \emph{some} field, of dimension at least two, is decomposable
+(with a generous sprinkling of the axiom of choice).
+
 \section{\((\Complex, +)\)}
 
 \(\Complex\) is quite straightforwardly isomorphic to \(\Reals \times \Reals\)
@@ -107,6 +111,43 @@ This is isomorphic to \(S^1 \times (\Reals^+, \cdot)\) via
 
 \section{\((\Rationals^+, \cdot)\)}
 
+Consider the following two subgroups:
+\begin{align*}
+ G &= \set{2^n : n \in \Integers} \isom \Integers \\
+ H &= \set[\Big]{\frac ab : a, b \in \Integers, 2 \ndivides a, b}
+\end{align*}
+The fact that they are subgroups follows quite quickly from the efficient
+subgroup criterion.
+
+Now we can apply the Direct Product Theorem to these, since
+\begin{enumerate}[label=(\roman*)]
+ \item
+  Let \(2^n\) be an element of \(G\), and \(a/b\) be an element of \(H\).
+  Suppose \(2^n\) is an integer.
+  If \(a/b = 2^n\), then \(a = 2^n b\), so \(2^n \divides a\). Hence \(2^n = 1\).
+
+  Suppose instead \(2^n\) is fractional. Then, we get
+  \(2^{-n} a = b\), so \(2^{-n} \divides b\), which is not possible.
+
+  So \(G \cap H = {1}\).
+ \item
+  All elements of \(G\) and \(H\) commute trivially since \(\Rationals^+\) is
+  abelian.
+ \item
+  If \(p/q \in \Rationals\) is a general element with \(p, q\) in lowest terms,
+  then either only \(p\) has a largest factor of \(2^n\) for some \(n\), so
+  \(p/q = 2^n \cdot (p/2^n)/q\), or
+  \(q\) has a largest factor of \(2^n\) for some \(n\), so
+  \(p/q = 2^{-n} \cdot p/(q/2^n)\), or neither does, and
+  \(p/q = 1 \cdot p/q\).
+
+  In each case, we have written \(p/q = gh\) for some \(g \in G, h \in H\).
+\end{enumerate}
+So \((\Rationals^+, \cdot) \isom G \times H \isom \Integers \times H\) and
+\(\Rationals\) is decomposable. This process can be repeated with the next prime
+number (\(3\), probably) to decompose \(H\) as \(\Integers \times H'\), and so
+on.
+
 \section{\((\Reals^+, \cdot)\)}
 
 This is isomorphic to \((\Reals, +)\) via \(x \mapsto \log x\), so we can reuse
@@ -115,5 +156,10 @@ the previous construction.
 \section{\(S^1 \isom \Reals / \Integers\)}
 
 \section{\(\Rationals / \Integers\)}
+
+\section{\(\Reals / \Rationals\)}
+
+Tentatively, this is a quotient space of \(\Reals\) over \(\Rationals\), so by
+the same argument as for \(\Reals\), is decomposable.
 
 \end{document}
