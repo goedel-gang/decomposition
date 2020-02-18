@@ -15,48 +15,47 @@
 \begin{document}
 \maketitle
 
-\section{\((\Integers, +)\)}
-\(\Integers\) is not decomposable. Suppose we had
-\(\Integers \isom G \times H\) for nontrivial \(G\), \(H\). Then since the
-subgroups of \(\Integers\) are of the form \(k\Integers\), we have
-\(G \isom n\Integers\) and \(H \isom m\Integers\) for some \(n, m\).
+A \emph{decomposition} of a group \(G\) is a pair of group \(A, B\) such that
+neither of \(A, B\) is trivial, and \(G \isom A \dprod B\).
 
-Since \(k\Integers \isom \Integers\), this implies
-\(\Integers \isom G \times H \isom \Integers \times \Integers\). This is not
-possible since \(\Integers\) has \(2\Integers\) as its only subgroup of index
-two, but \(\Integers \times \Integers\) has two subgroups of index two:
-\(2\Integers \times \Integers\) and \(\Integers \times 2\Integers\).
+\section{\((\Z, +)\)}
 
-Hence \(\Integers\) is not decomposable.
+\(\Z\) is not decomposable. Suppose we had \(\Z \isom G \dprod H\) for
+nontrivial \(G\), \(H\). Then since the subgroups of \(\Z\) are of the form
+\(k\Z\), we have \(G \isom n\Z\) and \(H \isom m\Z\) for some \(n, m\).
 
-\section{\((\Rationals, +)\)}
+Since \(k\Z \isom \Z\), this implies \(\Z \isom G \dprod H \isom \Z \dprod \Z\).
+This is not possible since \(\Z\) has \(2\Z\) as its only subgroup of index two,
+but \(\Z \dprod \Z\) has two subgroups of index two: \(2\Z \dprod \Z\) and \(\Z
+\dprod 2\Z\).
 
-Suppose we had \(\Rationals \isom G \times H\) for some nontrivial groups
-\(G, H\). Both \(G\) and \(H\) have a subgroup isomorphic to \(\Integers\),
-since each contains a nonzero element, and each element of \(\Rationals\) has
-infinite order.
+Hence \(\Z\) is not decomposable.
 
-Hence \(\Rationals\) has a subgroup isomorphic to
-\(\Integers \times \Integers\). Suppose \(a/b, c/d \in \Rationals\) generate the
-corresponding subgroups isomorphic to
-\(\Integers \times 0\Integers\) and \(0\Integers \times \Integers\)
-respectively, so
-\(\Integers \times \Integers \isom \cycsgp{a/b} \times \cycsgp{c/d}\).
-Without loss of generality, both generators are positive.
+\section{\((\Q, +)\)}
+
+Suppose we had \(\Q \isom G \dprod H\) for some nontrivial groups \(G, H\). Both
+\(G\) and \(H\) have a subgroup isomorphic to \(\Z\), since each contains a
+nonzero element, and each element of \(\Q\) has infinite order.
+
+Hence \(\Q\) has a subgroup isomorphic to \(\Z \dprod \Z\). Suppose
+\(a/b, c/d \in \Q\) generate the corresponding subgroups isomorphic to
+\(\Z \dprod 0\Z\) and \(0\Z \dprod \Z\) respectively, so
+\(\Z \dprod \Z \isom \cycsgp{a/b} \dprod \cycsgp{c/d}\). Without loss of
+generality, both generators are positive.
 
 Then, however, \(bc(a/b) = ad(c/d)\). This implies that in the subgroup
-isomorphic to \(\Integers \times \Integers\), we have
-\((bc, 0) = (0, ad)\), which is a contradiction as neither of these terms can be
-\(0\) if \(a/b, c/d\) are to be generators.
+isomorphic to \(\Z \dprod \Z\), we have \((bc, 0) = (0, ad)\), which is a
+contradiction as neither of these terms can be \(0\) if \(a/b, c/d\) are to be
+generators.
 
 So also \(\mathbb Q\) is not decomposable.
 
-\section{\((\Reals, +)\)}
+\section{\((\R, +)\)}
 
-Let \(\mathcal H\) be a Hamel basis for \(\Reals\) as a vector space over
-\(\Rationals\). Then any partition of \(\mathcal H\) as a disjoint union
+Let \(\mathcal H\) be a Hamel basis for \(\R\) as a vector space over \(\Q\).
+Then any partition of \(\mathcal H\) as a disjoint union
 \(\mathcal H = \mathcal H_1 \cup \mathcal H_2\) gives rise to two subgroups
-\(G_1 = \vspan \mathcal H_1, G_2 = \vspan \mathcal H_2 \sgp \Reals\). These are
+\(G_1 = \vspan \mathcal H_1, G_2 = \vspan \mathcal H_2 \sgp \R\). These are
 subgroups since they are subspaces by definition.
 
 Now we can apply the Direct Product Theorem, since
@@ -65,20 +64,20 @@ Now we can apply the Direct Product Theorem, since
   By linear independence, if \(x_1 \in G_1, x_2 \in G_2\) with \(x_1 = x_2\),
   then \(x_1 = x_2 = 0\), so \(G_1 \cap G_2\) is precisely \(\set{0}\).
  \item
-  \(\Reals\) is abelian, so trivially,
+  \(\R\) is abelian, so trivially,
   \(x_1 + x_2 = x_2 + x_2 \Forall x_1 \in G_1, x_2 \in G_2\).
  \item
-  Each \(x \in \Reals\) can be written as a linear combination of elements of
+  Each \(x \in \R\) can be written as a linear combination of elements of
   \(\mathcal H\), by definition. Then simply splitting this linear combination
   into linear combinations of the elements in \(\mathcal H_1\) and
   \(\mathcal H_2\), we get \(x_1 \in G_1, x_2 \in G_2\) with \(x_1 + x_2 = x\).
 \end{enumerate}
-So \(\Reals \isom G_1 \times G_2\) for any such choice.
+So \(\R \isom G_1 \dprod G_2\) for any such choice.
 
 To be explicit, a possible choice here might be
-\(\mathcal H_1 = \mathcal H \cap \Rationals\),
-\(\mathcal H_2 = \mathcal H \setminus \Rationals\), or possibly replacing
-\(\Rationals\) with some more imaginative subsets of \(\Reals\). Here, we know
+\(\mathcal H_1 = \mathcal H \cap \Q\),
+\(\mathcal H_2 = \mathcal H \setminus \Q\), or possibly replacing \(\Q\) with
+some more imaginative subsets of \(\R\). Here, we know
 \(\abs{\mathcal H_1} = 1\) precisely, as there must be a rational in
 \(\mathcal H\), so neither of \(G_1, G_2\) is trivial.
 
@@ -86,35 +85,33 @@ Note that really this implies that anything that is the additive group of a
 vector space over \emph{some} field, of dimension at least two, is decomposable
 (with a generous sprinkling of the axiom of choice).
 
-\section{\((\Complex, +)\)}
+\section{\((\CC, +)\)}
 
-\(\Complex\) is quite straightforwardly isomorphic to \(\Reals \times \Reals\)
-via \(z \mapsto (\Re z, \Im z)\).
+\(\CC\) is quite straightforwardly isomorphic to \(\R \dprod \R\) via \(z
+\mapsto (\Re z, \Im z)\).
 %ImRe??
 
-\section{\((\Rationals^\times, \cdot)\)}
+\section{\((\Q^\times, \cdot)\)}
 
-This is isomorphic to \(C_2 \times (\Rationals^+, \cdot)\) via
+This is isomorphic to \(C_2 \dprod (\Q^+, \cdot)\) via
 \(x \mapsto (\sgn x, \abs x)\) (where \(\sgn x \defeq x/\abs x\)).
 
-\section{\((\Reals^\times, \cdot)\)}
+\section{\((\R^\times, \cdot)\)}
 
-This is isomorphic to \(C_2 \times (\Reals^+, \cdot)\) via
+This is isomorphic to \(C_2 \dprod (\R^+, \cdot)\) via
 \(x \mapsto (\sgn x, \abs x)\).
 
-\section{\((\Complex^\times, \cdot)\)}
+\section{\((\CC^\times, \cdot)\)}
 
-This is isomorphic to \(S^1 \times (\Reals^+, \cdot)\) via
+This is isomorphic to \(S^1 \dprod (\R^+, \cdot)\) via
 \(re^{i\theta} \mapsto (e^{i\theta}, r)\).
 
-\section{\(\parens[\big]{\set{a / 2^n : a, n \in \Integers}, +}\)}
-
-\section{\((\Rationals^+, \cdot)\)}
+\section{\((\Q^+, \cdot)\)}
 
 Consider the following two subgroups:
 \begin{align*}
- G &= \set{2^n : n \in \Integers} \isom \Integers \\
- H &= \set[\Big]{\frac ab : a, b \in \Integers, 2 \ndivides a, b}
+ G &= \set{2^n : n \in \Z} \isom \Z \\
+ H &= \set[\Big]{\frac ab : a, b \in \Z, 2 \ndivides a, b}
 \end{align*}
 The fact that they are subgroups follows quite quickly from the efficient
 subgroup criterion.
@@ -124,42 +121,109 @@ Now we can apply the Direct Product Theorem to these, since
  \item
   Let \(2^n\) be an element of \(G\), and \(a/b\) be an element of \(H\).
   Suppose \(2^n\) is an integer.
+
   If \(a/b = 2^n\), then \(a = 2^n b\), so \(2^n \divides a\). Hence \(2^n = 1\).
 
-  Suppose instead \(2^n\) is fractional. Then, we get
-  \(2^{-n} a = b\), so \(2^{-n} \divides b\), which is not possible.
+  Suppose instead \(2^n\) is fractional. Then, we get \(2^{-n} a = b\), so
+  \(2^{-n} \divides b\), which is not possible.
 
   So \(G \cap H = {1}\).
  \item
-  All elements of \(G\) and \(H\) commute trivially since \(\Rationals^+\) is
-  abelian.
+  All elements of \(G\) and \(H\) commute trivially since \(\Q^+\) is abelian.
  \item
-  If \(p/q \in \Rationals\) is a general element with \(p, q\) in lowest terms,
-  then either only \(p\) has a largest factor of \(2^n\) for some \(n\), so
-  \(p/q = 2^n \cdot (p/2^n)/q\), or
-  \(q\) has a largest factor of \(2^n\) for some \(n\), so
-  \(p/q = 2^{-n} \cdot p/(q/2^n)\), or neither does, and
+  If \(p/q \in \Q\) is a general element with \(p, q\) in lowest terms, then
+  either only \(p\) has a largest factor of \(2^n\) for some \(n\), so
+  \(p/q = 2^n \cdot (p/2^n)/q\), or \(q\) has a largest factor of \(2^n\) for
+  some \(n\), so \(p/q = 2^{-n} \cdot p/(q/2^n)\), or neither does, and
   \(p/q = 1 \cdot p/q\).
 
   In each case, we have written \(p/q = gh\) for some \(g \in G, h \in H\).
 \end{enumerate}
-So \((\Rationals^+, \cdot) \isom G \times H \isom \Integers \times H\) and
-\(\Rationals\) is decomposable. This process can be repeated with the next prime
-number (\(3\), probably) to decompose \(H\) as \(\Integers \times H'\), and so
-on.
+So \((\Q^+, \cdot) \isom G \dprod H \isom \Z \dprod H\) and \(\Q\) is
+decomposable. This process can be repeated with the next prime number (\(3\),
+probably) to decompose \(H\) as \(\Z \dprod H'\), and so on.
 
-\section{\((\Reals^+, \cdot)\)}
+\section{\((\R^+, \cdot)\)}
 
-This is isomorphic to \((\Reals, +)\) via \(x \mapsto \log x\), so we can reuse
-the previous construction.
+This is isomorphic to \((\R, +)\) via \(x \mapsto \log x\), so we can reuse the
+previous construction.
 
-\section{\(S^1 \isom \Reals / \Integers\)}
+\section{\(S^1 \isom \R / \Z\)}
 
-\section{\(\Rationals / \Integers\)}
+\section{\(\Q / \Z\)}
 
-\section{\(\Reals / \Rationals\)}
+Let
+\begin{align*}
+ G &= \set{a/2^n : a \in \Z, n \in \Z_{\ge 0}} \\
+ H &= \set{a/m : a \in \Z, m \in \Z_{\ge 0}, 2 \ndivides m}
+\end{align*}
+These are subgroups of \(\Q\) containing \(\Z\), so
+\(G / \Z, H / \Z \sgp \Q / \Z\).
 
-Tentatively, this is a quotient space of \(\Reals\) over \(\Rationals\), so by
-the same argument as for \(\Reals\), is decomposable.
+We can apply the Direct Product Theorem, since
+\begin{enumerate}[label=(\roman*)]
+ \item
+  \(G \cap H\) is precisely the integers, since the only power of two with no
+  factor of two is \(1\). But the quotient map \(\Q \to \Q/\Z\) precisely takes
+  all the integers to the identity coset, so \(G/\Z \cap H/\Z\) is trivial.
+ \item
+  \(\Q/\Z\) is abelian, so trivially, all elements of \(G/\Z\) and \(H/\Z\)
+  commute.
+ \item
+  In \(\Q\), let \(b/(2^n m)\) be a general element, with \(2 \ndivides m\). Now
+  by B\'ezout's Theorem, the diophantine equation  \(mx + 2^n y = 1\) has a
+  solution for \(x, y \in \Z\), since \(\gcd(2^n, m) = 1\). But this precisely
+  means that \(1/(2^n m) = x/2^n + y/m\), a sum of elements of \(G, H\).
+
+  Then by well-definedness of the quotient map, we immediately get that any
+  given coset \(b/(2^n m) + \Z \in \Q / \Z\) is just
+  \((x/2^n + \Z) + (y/m + \Z)\).
+\end{enumerate}
+Hence \(\Q/\Z \isom G/\Z \dprod H/\Z\), which is a nontrivial decomposition.
+
+\section{\(\parens[\big]{\set{a / 2^n : a \in \Z, n \in \Z_{\ge 0}}, +}
+           \isom \bigcup\limits_{n \in \N} 2^{-n} \Z \)}
+
+\section{\(\parens[\big]{
+            \set{a / m : a \in \Z, n \in \Z_{\ge 0}, 2 \ndivides m}, +}\)}
+
+\section{\(\parens[\big]{\set{a / 2^n : a \in \Z, n \in \Z_{\ge 0}}, +} / \Z\)}
+
+Call this group \(G\) for convenience. Also we refer to elements of \(G\) as
+their unique coset representatives in \(\intco{0, 1}\). Any infinite subgroup
+\(H \sgp G\) must be \(G\), since in order to be infinite, \(H\) must contain
+elements that have arbitrary large denominators written in lowest terms, since
+there are finitely many (\(2^n\)) elements that can be written with any
+denominator \(2^n\).
+
+But if we have \(x/2^n\) where \(2 \ndivides x\), then
+\(xy \mcong 1 \pmod{2^n}\) is solvable since \(x, 2^n\) are coprime. So
+\(\cycsgp{x/2^n} \sgp H\) contains \(1/2^n\) and hence also \(a/2^n\) for all
+\(a\), which gives all elements of denominator at most \(2^n\). Since the
+denominators found in \(H\) are arbitrarily large, \(H\) contains all elements,
+and \(H = G\).
+
+But if \(G \isom A \dprod B\) nontrivially, then \(A, B\) are both isomorphic to
+proper subgroups of \(G\) (since there is a non-identity \(b \in B\) implying
+\((e, b) \notin A \times \set e\) and vice versa), so \(A, B\) are both finite.
+But then \(A \dprod B\) is finite with order \(\abs A \abs B\), which
+contradicts the fact that \(G\) is infinite (eg since \(G\) contains \(1/2^n\)
+for all \(n \in \Z_{\ge 0}\)).
+
+So \(G\) is not decomposable.
+
+This argument works for the family of similar groups given by fractions with
+denominators power of any prime, mod \(\Z\).
+
+\section{\(\R / \Q\)}
+
+Tentatively, this is a quotient space of \(\R\) over \(\Q\), so by
+the same argument as for \(\R\), is decomposable.
+
+\(\Q\) is a subspace of \(\R\) over \(\Q\) as it is just the span of any
+(nonzero) rational number (eg \(1\)). Particularly, once \(\R\) is equipped with
+a Hamel basis \(\mathcal H\), \(\Q\) is the kernel of the vectors space
+homomorphism \(\R \to \R\) given by ``ignore the rational term in the linear
+combination of basis vectors'', which has image isomorphic to \(\R / \Q\).
 
 \end{document}

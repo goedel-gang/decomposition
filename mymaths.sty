@@ -15,6 +15,7 @@
 \DeclarePairedDelimiter\parens()
 \DeclarePairedDelimiter\bracks[]
 \DeclarePairedDelimiter\cycsgp\langle\rangle
+\DeclarePairedDelimiter\intco[)
 
 % mathbb
 \RequirePackage{amssymb}
@@ -42,15 +43,17 @@
 % drop-in commands for some sets
 % modularity and all that
 \newcommand*\setstyle\mathbb
-\newcommand*\Naturals{\setstyle N}
-\newcommand*\Integers{\setstyle Z}
-\newcommand*\Rationals{\setstyle Q}
-\newcommand*\Reals{\setstyle R}
-\newcommand*\Complex{\setstyle C}
+\newcommand*\N{\setstyle N}
+\newcommand*\Z{\setstyle Z}
+\newcommand*\Q{\setstyle Q}
+\newcommand*\R{\setstyle R}
+\newcommand*\CC{\setstyle C}
 \newcommand*\sgp\le
 \newcommand*\divides\mid
 \newcommand*\ndivides\nmid
 \newcommand*\isom\cong
 \newcommand*\defeq\coloneqq
+\newcommand*\dprod\times
+\newcommand*\mcong\equiv
 
 \newcommand*\degrees[1]{#1^\circ}
