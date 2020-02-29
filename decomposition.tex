@@ -1,8 +1,8 @@
 % Compiling with
-% latexmk -halt-on-error -shell-escape -synctex=1 -pdf
+% latexmk -halt-on-error -shell-escape -synctex=1 -pdf <file.tex>
 % (Recommend using a latexmkrc file so as just to run latexmk -pvc, for example)
 % Probably you can achieve the same with an inordinate number of invocations of
-% pdflatex -halt-on-error -shell-escape -synctex=1
+% pdflatex -halt-on-error -shell-escape -synctex=1 <file.tex>
 
 % fleqn aligns equations to the left, a4 paper size, 11pt font, article class
 \documentclass[fleqn,a4paper,11pt]{article}
@@ -11,6 +11,14 @@
 
 \usepackage{mymaths}
 \usepackage{mystyle}
+
+% Embed source files into PDF in case of loss. You can view or extract the
+% source files by doing `pdfdetach -list <file.pdf>` or
+% `pdfdetach -saveall <file.pdf>`, using pdfdetach from poppler, or some other
+% suitable method.
+\usepackage{embedall}
+\embedfile{mymaths.sty}
+\embedfile{mystyle.sty}
 
 \begin{document}
 \maketitle
@@ -84,7 +92,9 @@ vector space over \emph{some} field, of dimension at least two, is decomposable
 
 \(\CC\) is quite straightforwardly isomorphic to \(\R \dprod \R\) via \(z
 \mapsto (\Re z, \Im z)\).
-%ImRe??
+
+In fact, since \(\R \dprod \R\) is a \(\mathfrak c\)-dimensional vector space
+over \(\Q\), \(\CC \isom \R\).
 
 \section{\((\Q^\times, \cdot)\)}
 
@@ -142,8 +152,6 @@ probably) to decompose \(H\) as \(\Z \dprod H'\), and so on.
 
 This is isomorphic to \((\R, +)\) via \(x \mapsto \log x\), so we can reuse the
 previous construction.
-
-\section{\(S^1 \isom \R / \Z\)}
 
 \section{\(\Q / \Z\)}
 
@@ -212,13 +220,20 @@ denominators power of any prime, mod \(\Z\).
 
 \section{\(\R / \Q\)}
 
-Tentatively, this is a quotient space of \(\R\) over \(\Q\), so by
-the same argument as for \(\R\), is decomposable.
+This is a quotient space of \(\R\) over \(\Q\), so by the same argument as for
+\(\R\), is decomposable. In fact, \(\R / \Q\) is still a
+\(\mathfrak c\)-dimensional vector space over \(\Q\), so is isomorphic to
+\(\R / \Q\).
 
-\(\Q\) is a subspace of \(\R\) over \(\Q\) as it is just the span of any
-(nonzero) rational number (eg \(1\)). Particularly, once \(\R\) is equipped with
-a Hamel basis \(\mathcal H\), \(\Q\) is the kernel of the vectors space
-homomorphism \(\R \to \R\) given by ``ignore the rational term in the linear
-combination of basis vectors'', which has image isomorphic to \(\R / \Q\).
+\section{\(S^1 \isom \R / \Z\)}
+
+By the structure theorem for divisible groups,
+\begin{equation*}
+ \R / \Z
+  \isom \Tor(\R / \Z) \dprod (\R / \Z) / \Tor(\R / \Z)
+  \isom (\Q / \Z) \dprod (\R / \Q)
+  \isom (\Q / \Z) \dprod \R
+\end{equation*}
+so in fact \(\CC^\times \isom (\Q / \Z) \dprod \R\).
 
 \end{document}
